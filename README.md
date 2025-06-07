@@ -25,7 +25,7 @@ Management suspects that some employees may be using TOR browsers to bypass netw
 
 ### 1. Searched the `DeviceFileEvents` Table
 
-Searched the DeviceFileEvents table for any files containing the word "tor" and found that the user named "jun-threathunt" seems to have downloaded a Tor installer. After that, several Tor-related files were copied to the desktop, and a file called "tor-shopping-list.txt" was also created there. These events begun at: 2025-06-01T23:30:36.0326577Z
+Searched the DeviceEvents table for any files containing the word "tor" and found that the user named "jun-threathunt" seems to have downloaded a Tor installer. After that, several Tor-related files were copied to the desktop, and a file called "tor-shopping-list.txt" was also created there. These events begun at: 2025-06-01T23:30:36.0326577Z
 
 **Query used to locate events:**
 
@@ -37,7 +37,8 @@ DeviceEvents
 | order by Timestamp desc
 
 ```
-<img width="981" alt="Screenshot 2025-06-03 at 3 09 44 PM" src="https://github.com/user-attachments/assets/f56b6949-12c5-4cf7-a3d2-1ca9366f06b3" />
+<img width="981" alt="Screenshot 2025-06-03 at 3 09 44 PM" src="https://github.com/user-attachments/assets/f02f2f65-aa00-4a4e-b56c-c650ff08b699" />
+
 
 ---
 
@@ -54,7 +55,7 @@ DeviceProcessEvents
 | where ProcessCommandLine contains "tor-browser-windows-x86_64-portable-14.5.3.exe"
 | project Timestamp, DeviceName, AccountName, ActionType, FileName, FolderPath, SHA256, ProcessCommandLine
 ```
-<img width="1448" alt="Screenshot 2025-06-03 at 3 14 58 PM" src="https://github.com/user-attachments/assets/b9f3b7eb-d8ca-480f-b634-9b83c8bf69c7" />
+<img width="1448" alt="Screenshot 2025-06-03 at 3 14 58 PM" src="https://github.com/user-attachments/assets/c8e7f558-2cbd-48df-9a94-321134c727ce" />
 
 ---
 
@@ -71,7 +72,7 @@ DeviceProcessEvents
 | project Timestamp, DeviceName, AccountName, ActionType, FileName, FolderPath, SHA256, ProcessCommandLine
 | order by Timestamp desc 
 ```
-<img width="1637" alt="Screenshot 2025-06-03 at 3 18 06 PM" src="https://github.com/user-attachments/assets/ee252456-cb88-4cf0-9cf4-7284bfa4d328" />
+<img width="1637" alt="Screenshot 2025-06-03 at 3 18 06 PM" src="https://github.com/user-attachments/assets/9ec14167-957f-41ad-85a3-6124242e357e" />
 
 ---
 
@@ -89,8 +90,7 @@ DeviceNetworkEvents
 | project Timestamp, DeviceName, InitiatingProcessAccountName, ActionType, RemoteIP, RemotePort, InitiatingProcessFileName, InitiatingProcessFolderPath
 | order by Timestamp desc
 ```
-<img width="1628" alt="Screenshot 2025-06-03 at 3 31 18 PM" src="https://github.com/user-attachments/assets/0f6469f8-17fd-4406-ad56-5f859bf93c78" />
-
+<img width="1628" alt="Screenshot 2025-06-03 at 3 31 18 PM" src="https://github.com/user-attachments/assets/c923ebb1-568f-4959-b5c6-711090b798c7" />
 
 ---
 
